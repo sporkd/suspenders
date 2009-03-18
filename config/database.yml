@@ -7,6 +7,8 @@ development:
   password: 
   host: localhost
   encoding: utf8
+  pool: 5
+  reconnect: false
   
 test:
   adapter: mysql
@@ -15,6 +17,8 @@ test:
   password: 
   host: localhost
   encoding: utf8
+  pool: 5
+  reconnect: false
   
 staging:
   adapter: mysql
@@ -23,6 +27,8 @@ staging:
   password: <%= File.read(PASSWORD_FILE).chomp if File.readable? PASSWORD_FILE %>
   host: localhost
   encoding: utf8
+  pool: 5
+  reconnect: false
   socket: /var/lib/mysql/mysql.sock
   
 production:
@@ -32,4 +38,6 @@ production:
   password: <%= File.read(PASSWORD_FILE).chomp if File.readable? PASSWORD_FILE %>
   host: localhost
   encoding: utf8
+  pool: 5
+  reconnect: false
   socket: /var/lib/mysql/mysql.sock
